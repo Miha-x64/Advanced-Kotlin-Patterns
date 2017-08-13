@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.FrameLayout
 import net.aquadc.advancedkotlinpatterns.feature.ankoRecyclerView.AnkoRecyclerViewFragment
+import net.aquadc.advancedkotlinpatterns.feature.bind.ProfileFragment
 import org.jetbrains.anko.UI
 import org.jetbrains.anko.listView
 import org.jetbrains.anko.matchParent
@@ -20,7 +21,8 @@ class WelcomeFragment : Fragment() {
             layoutParams = FrameLayout.LayoutParams(matchParent, matchParent)
 
             val itemAdapter = ArrayAdapter(activity, android.R.layout.simple_list_item_1, listOf(
-                    Item("RecyclerView with Anko", ::AnkoRecyclerViewFragment)
+                    Item("RecyclerView with Anko", ::AnkoRecyclerViewFragment),
+                    Item("Reactive binding", ::ProfileFragment)
             ))
             adapter = itemAdapter
 
