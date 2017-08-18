@@ -21,6 +21,7 @@ class ProfileFragment : Fragment() {
 
         verticalLayout {
             layoutParams = FrameLayout.LayoutParams(matchParent, matchParent)
+            padding = dip(16)
 
             textView {
                 textSize = 20f

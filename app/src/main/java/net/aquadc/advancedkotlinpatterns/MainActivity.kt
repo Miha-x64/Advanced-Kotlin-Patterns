@@ -11,9 +11,13 @@ class MainActivity : Activity() {
         if (savedInstanceState == null) {
             fragmentManager
                     .beginTransaction()
-                    .replace(android.R.id.content, WelcomeFragment())
+                    .replace(FragmentContainerId, WelcomeFragment())
                     .commit()
         }
+    }
+
+    companion object {
+        const val FragmentContainerId = android.R.id.content
     }
 
 

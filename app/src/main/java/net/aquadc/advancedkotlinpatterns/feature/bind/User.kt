@@ -2,7 +2,7 @@ package net.aquadc.advancedkotlinpatterns.feature.bind
 
 import android.os.Parcel
 import android.os.Parcelable
-import net.aquadc.advancedkotlinpatterns.feature.crossinlineOneLiner.parcelableCreator
+import net.aquadc.advancedkotlinpatterns.common.parcelableCreator
 import java.util.*
 
 class User(
@@ -20,11 +20,13 @@ class User(
     }
 
     companion object {
-        @JvmField val CREATOR = parcelableCreator { User(
-                id = UUID(it.readLong(), it.readLong()),
-                email = it.readString(),
-                name = it.readString()
-        ) }
+        @JvmField val CREATOR = parcelableCreator {
+            User(
+                    id = UUID(it.readLong(), it.readLong()),
+                    email = it.readString(),
+                    name = it.readString()
+            )
+        }
     }
 
 }
