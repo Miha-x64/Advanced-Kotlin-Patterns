@@ -28,3 +28,4 @@ Advanced Kotlin Patterns in Android /  Idiomatic Kotlin code in Android
   [call-site](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodFilterAndSortChooserFragment.kt#L54)
 
 * TODO: sealed classes
+* TODO: kotlinx coroutines vs. Anko coroutines
