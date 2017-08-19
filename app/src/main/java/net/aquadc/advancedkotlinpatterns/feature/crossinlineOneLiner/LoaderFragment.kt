@@ -9,13 +9,16 @@ import android.text.SpannableStringBuilder
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.TextView
 import org.jetbrains.anko.*
 
 class LoaderFragment : Fragment(), LoaderManager.LoaderCallbacks<CharSequence> {
 
-    private lateinit var textView: TextView
+    private lateinit var loaderTextView: TextView
+    private lateinit var watchedEditText: EditText
+    private lateinit var watchedTextView: TextView
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -24,12 +27,30 @@ class LoaderFragment : Fragment(), LoaderManager.LoaderCallbacks<CharSequence> {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?) = UI {
 
-        textView = textView("Loading...") {
+        verticalLayout {
             layoutParams = FrameLayout.LayoutParams(matchParent, matchParent)
             padding = dip(16)
-            textSize = 22f
-            movementMethod = LinkMovementMethod.getInstance()
-            setLineSpacing(0f, 1.2f)
+
+            loaderTextView = textView("Loading...") {
+                textSize = 22f
+                movementMethod = LinkMovementMethod.getInstance()
+                setLineSpacing(0f, 1.2f)
+            }.lparams(width = matchParent)
+
+            watchedEditText = editText {
+                id = 1
+                hint = "Type anything..."
+                addTextChangedListener(AfterTextChangedListener { watchedTextView.text = it })
+            }.lparams(width = matchParent) {
+                topMargin = dip(16)
+            }
+
+            watchedTextView = textView("I'm watching you!") {
+                textSize = 14f
+            }.lparams(width = matchParent) {
+                topMargin = dip(16)
+            }
+
         }
 
     }.view
@@ -53,7 +74,7 @@ class LoaderFragment : Fragment(), LoaderManager.LoaderCallbacks<CharSequence> {
     }
 
     override fun onLoadFinished(loader: Loader<CharSequence>, data: CharSequence) {
-        textView.text = data
+        loaderTextView.text = data
     }
 
     override fun onLoaderReset(loader: Loader<CharSequence>) = Unit

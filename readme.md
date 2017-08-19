@@ -10,10 +10,11 @@ Advanced Kotlin Patterns in Android /  Idiomatic Kotlin code in Android
     * [FoodListFragment.Mode.FilterAndSort](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodListFragment.kt#L74)
     * [User](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/bind/User.kt)
   * [CachedAsyncTaskLoader](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/CachedAsyncTaskLoader.kt),
-  [ClickableSpan](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/ClickableSpan.kt)
-    * [call-site: LoaderFragment](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/LoaderFragment.kt)
-  * [TextWatcher](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/TextWatcher.kt)
-    * TODO: exemplify
+  [call-site](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/LoaderFragment.kt#L58)
+  * [ClickableSpan](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/ClickableSpan.kt),
+  [call-site](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/LoaderFragment.kt#L63)
+  * [TextWatcher](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/TextWatcher.kt),
+  [call-site](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/LoaderFragment.kt#L42)
 
 * Reactive data binding via broadcasts
   * [bind() implementation](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/bind/bind.kt)

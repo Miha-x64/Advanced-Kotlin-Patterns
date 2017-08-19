@@ -28,7 +28,7 @@ class WelcomeFragment : Fragment() {
                     Item("Edit user (Reactive binding)", ::ProfileFragment),
                     Item("Popular food (safe fragment)", { FoodListFragment(FoodListFragment.Mode.Popular) }),
                     Item("Food filter (safe fragment)", ::FoodFilterAndSortChooserFragment),
-                    Item("A fragment with CachedAsyncTaskLoader and ClickableSpan (crossinline)", ::LoaderFragment)
+                    Item("A fragment with CachedAsyncTaskLoader, ClickableSpan, and AfterTextChangedListener (crossinline)", ::LoaderFragment)
             ))
             adapter = itemAdapter
 
