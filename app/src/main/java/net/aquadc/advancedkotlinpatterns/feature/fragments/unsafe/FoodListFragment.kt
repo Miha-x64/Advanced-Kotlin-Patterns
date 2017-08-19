@@ -41,6 +41,7 @@ class FoodListFragment : Fragment() {
         }
 
         recyclerView {
+            id = 1
             layoutManager = LinearLayoutManager(activity)
             adapter = ListAdapter(data) { createFoodItemHolder() }
             addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))

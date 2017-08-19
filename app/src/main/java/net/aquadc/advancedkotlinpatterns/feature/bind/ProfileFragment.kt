@@ -37,10 +37,12 @@ class ProfileFragment : Fragment() {
             }.lparams(matchParent, wrapContent)
 
             emailInput = editText {
+                id = 1
                 hint = "E-mail"
             }.lparams(matchParent, wrapContent)
 
             nameInput = editText {
+                id = 2
                 hint = "Name"
             }.lparams(matchParent, wrapContent)
 

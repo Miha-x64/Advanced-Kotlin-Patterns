@@ -39,6 +39,7 @@ class FoodListFragment : Fragment {
         val mode = arguments.getParcelable<Mode>(ModeKey)
 
         recyclerView {
+            id = 1
             layoutManager = LinearLayoutManager(activity)
             adapter = ListAdapter(mode.data) { createFoodItemHolder() }
             addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))

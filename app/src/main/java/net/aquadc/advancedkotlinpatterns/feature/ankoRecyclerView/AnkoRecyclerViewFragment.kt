@@ -17,6 +17,7 @@ class AnkoRecyclerViewFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?) = UI {
 
         recyclerView {
+            id = 1
             layoutManager = LinearLayoutManager(activity)
             adapter = ListAdapter(foodItems) { createFoodItemHolder() }
             addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
