@@ -7,6 +7,8 @@ import android.widget.TextView
 import net.aquadc.advancedkotlinpatterns.app
 import org.jetbrains.anko.*
 
+// https://meoyawn.tumblr.com/post/154221726637/anko-viewholders-and-applicative-lifting
+// 'I hate my type checker'
 fun Fragment.createFoodItemHolder(): FoodItemHolder {
     var photoView: ImageView? = null
     var titleView: TextView? = null
@@ -51,8 +53,6 @@ fun Fragment.createFoodItemHolder(): FoodItemHolder {
             }
         }
     }.view
-
-    // https://meoyawn.tumblr.com/post/154221726637/anko-viewholders-and-applicative-lifting
 
     return FoodItemHolder(itemView, photoView!!, titleView!!, descriptionView!!, nutritionInfoView!!, app.picasso)
 }
