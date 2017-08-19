@@ -10,6 +10,7 @@ import android.widget.FrameLayout
 import net.aquadc.advancedkotlinpatterns.common.replaceAndCommit
 import net.aquadc.advancedkotlinpatterns.feature.ankoRecyclerView.AnkoRecyclerViewFragment
 import net.aquadc.advancedkotlinpatterns.feature.bind.ProfileFragment
+import net.aquadc.advancedkotlinpatterns.feature.crossinlineOneLiner.LoaderFragment
 import net.aquadc.advancedkotlinpatterns.feature.fragments.safe.FoodFilterAndSortChooserFragment
 import net.aquadc.advancedkotlinpatterns.feature.fragments.safe.FoodListFragment
 import org.jetbrains.anko.UI
@@ -26,7 +27,8 @@ class WelcomeFragment : Fragment() {
                     Item("Food list (RecyclerView with Anko)", ::AnkoRecyclerViewFragment),
                     Item("Edit user (Reactive binding)", ::ProfileFragment),
                     Item("Popular food (safe fragment)", { FoodListFragment(FoodListFragment.Mode.Popular) }),
-                    Item("Food filter (safe fragment)", ::FoodFilterAndSortChooserFragment)
+                    Item("Food filter (safe fragment)", ::FoodFilterAndSortChooserFragment),
+                    Item("A fragment with CachedAsyncTaskLoader and ClickableSpan (crossinline)", ::LoaderFragment)
             ))
             adapter = itemAdapter
 

@@ -9,11 +9,11 @@ Advanced Kotlin Patterns in Android /  Idiomatic Kotlin code in Android
     * [FoodListFragment.Mode.Popular](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodListFragment.kt#L64) (parcelable singleton)
     * [FoodListFragment.Mode.FilterAndSort](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodListFragment.kt#L74)
     * [User](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/bind/User.kt)
-  * [CachedLoader](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/CachedLoader.kt) function, call-sites:
-    * TODO: exemplify
-  * [ClickableSpan](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/ClickableSpan.kt)
-    * TODO: exemplify
+  * [CachedAsyncTaskLoader](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/CachedAsyncTaskLoader.kt),
+  [ClickableSpan](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/ClickableSpan.kt)
+    * [call-site: LoaderFragment](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/LoaderFragment.kt)
   * [TextWatcher](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/TextWatcher.kt)
+    * TODO: exemplify
 
 * Reactive data binding via broadcasts
   * [bind() implementation](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/bind/bind.kt)
@@ -22,7 +22,8 @@ Advanced Kotlin Patterns in Android /  Idiomatic Kotlin code in Android
 * Safe fragments
   * [Unsafe fragment implementation](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/unsafe/FoodListFragment.kt), 
   [Unsafe call-site](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/unsafe/FoodFilterAndSortChooserFragment.kt#L54)
-  * [Fragment with safe arguments and mode delegation](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodListFragment.kt),
+  * [Safe fragment](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodListFragment.kt)
+  with deprecated no-arg ctor, a ctor-like factory, and mode delegation;
   [call-site](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodFilterAndSortChooserFragment.kt#L54)
 
 * TODO: sealed classes

@@ -15,7 +15,7 @@ abstract class CachedLoader<D>(context: Context) : AsyncTaskLoader<D>(context) {
 
 }
 
-inline fun <D> CachedLoader(
+inline fun <D> CachedAsyncTaskLoader(
         context: Context, crossinline load: () -> D
 ) = object : CachedLoader<D>(context) {
     override fun loadInBackground(): D = load()
