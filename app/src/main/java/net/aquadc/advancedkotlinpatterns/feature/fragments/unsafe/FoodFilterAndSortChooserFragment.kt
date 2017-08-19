@@ -1,4 +1,4 @@
-package net.aquadc.advancedkotlinpatterns.feature.fragments.safe
+package net.aquadc.advancedkotlinpatterns.feature.fragments.unsafe
 
 import android.app.Fragment
 import android.os.Bundle
@@ -13,7 +13,7 @@ import net.aquadc.advancedkotlinpatterns.recycler.NutritionParameter
 import org.jetbrains.anko.*
 import java.util.*
 
-class FoodSortChooserFragment : Fragment() {
+class FoodFilterAndSortChooserFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?) = UI {
 
@@ -51,7 +51,16 @@ class FoodSortChooserFragment : Fragment() {
             button("Show") {
                 setOnClickListener {
 
-                    val fragment = SortedFoodFragment(
+                    /*val fragment = FoodListFragment().apply {
+                        arguments = Bundle(4).apply {
+                            putInt(FoodListFragment.ModeKey, FoodListFragment.FilterAndSortMode)
+                            putEnumSet(FoodListFragment.FoodKindsKey, foodChecks.filterValues { it.isChecked }.keys)
+                            putSerializable(FoodListFragment.SortByParameterKey, nutritionParameterSpinner.selectedItem as NutritionParameter)
+                            putBoolean(FoodListFragment.SortDescKey, descendingCheck.isChecked)
+                        }
+                    }*/
+
+                    val fragment = FoodListFragment.filterAndSort(
                             kinds = foodChecks.filterValues { it.isChecked }.keys,
                             sortBy = nutritionParameterSpinner.selectedItem as NutritionParameter,
                             desc = descendingCheck.isChecked)

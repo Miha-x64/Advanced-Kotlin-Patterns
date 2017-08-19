@@ -29,9 +29,34 @@ inline fun <reified E : Enum<E>> Bundle.getEnumSet(key: String): Set<E> {
     return set
 }
 
-inline fun <T, reified R> Collection<T>.mapToArray(transform: (T) -> R): Array<R> {
-    val itr = iterator()
-    val array = Array(size) { transform(itr.next()) }
-    check(!itr.hasNext())
-    return array
+fun <E : Enum<E>> Parcel.writeEnumSet(set: Set<E>) {
+    writeStringArray(set.mapToArray { it.name })
+}
+
+inline fun <reified E : Enum<E>> Parcel.readEnumSet(): Set<E> {
+    val names = createStringArray()
+    val set = EnumSet.noneOf(E::class.java)
+    names.forEach { set.add(enumValueOf(it)) }
+    return set
+}
+
+fun Parcel.writeBoolean(value: Boolean) {
+    writeByte(if (value) 1 else 0)
+}
+
+fun Parcel.readBoolean(): Boolean {
+    val value = readByte()
+    return when (value) {
+        0.toByte() -> false
+        1.toByte() -> true
+        else -> throw IllegalArgumentException("Cannot read byte value $value as Boolean, 0 or 1 expected.")
+    }
+}
+
+fun Parcel.writeEnum(value: Enum<*>) {
+    writeString(value.name)
+}
+
+inline fun <reified E : Enum<E>> Parcel.readEnum(): E {
+    return enumValueOf(readString())
 }

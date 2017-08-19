@@ -9,13 +9,15 @@ import java.util.Collections.unmodifiableList
  * @param description   brief info about composition, cooking technology, geography & history of a product
  * @param nutritionInfo nutritional value details of a product
  * @param kind          whether this item is a meal, a drink or whatever
+ * @param popularity    number of search results in Google, where query is [name]
  */
 class FoodItem(
         val photoUrl: String,
         val name: CharSequence,
         val description: CharSequence,
         val nutritionInfo: NutritionInfo,
-        val kind: FoodKind
+        val kind: FoodKind,
+        val popularity: Long
 )
 
 /**
