@@ -40,6 +40,6 @@ dependencies {
 }
 repositories {
     maven {
-        url 'http://dl.bintray.com/kotlin/kotlin-eap-1.1'
+        url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2'
     }
 }
