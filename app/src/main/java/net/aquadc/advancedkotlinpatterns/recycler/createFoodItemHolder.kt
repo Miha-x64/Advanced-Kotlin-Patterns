@@ -25,28 +25,29 @@ fun Fragment.createFoodItemHolder(): FoodItemHolder {
                 id = 2
                 textSize = 20f
                 textColor = 0xFF000000.toInt()
-                horizontalPadding = dip(8)
             }.lparams {
                 rightOf(1)
+                topMargin = dip(8)
+                horizontalMargin = dip(8)
             }
 
             descriptionView = textView {
                 id = 3
                 textSize = 16f
-                horizontalPadding = dip(8)
-                bottomPadding = dip(4)
             }.lparams {
                 rightOf(1)
                 below(2)
+                horizontalMargin = dip(8)
+                bottomMargin = dip(4)
             }
 
             nutritionInfoView = textView {
                 textSize = 14f
-                horizontalPadding = dip(8)
-                bottomPadding = dip(8)
             }.lparams {
                 rightOf(1)
                 below(3)
+                horizontalMargin = dip(8)
+                bottomMargin = dip(8)
             }
         }
     }.view

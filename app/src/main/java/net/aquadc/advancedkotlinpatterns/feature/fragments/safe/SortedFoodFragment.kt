@@ -1,4 +1,4 @@
-package net.aquadc.advancedkotlinpatterns.feature.fragments.unsafe
+package net.aquadc.advancedkotlinpatterns.feature.fragments.safe
 
 import android.app.Fragment
 import android.os.Bundle
@@ -13,7 +13,17 @@ import net.aquadc.advancedkotlinpatterns.recycler.*
 import org.jetbrains.anko.UI
 import org.jetbrains.anko.recyclerview.v7.recyclerView
 
-class SortedFoodFragment : Fragment() {
+class SortedFoodFragment : Fragment {
+
+    @Deprecated(message = "use factory instead", level = DeprecationLevel.ERROR)
+    constructor()
+
+    private constructor(args: Bundle) { super.setArguments(args) }
+
+    @Deprecated(message = "use factory instead", level = DeprecationLevel.ERROR)
+    override fun setArguments(args: Bundle?) {
+        super.setArguments(args)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?) = UI {
 
@@ -35,24 +45,17 @@ class SortedFoodFragment : Fragment() {
 
     }.view
 
-    /*companion object {
-        const val FoodKindsKey = "food kinds"
-        const val SortByParameterKey = "sort by"
-        const val SortDescKey = "desc"
-    }*/
-
     companion object {
         private const val FoodKindsKey = "food kinds"
         private const val SortByParameterKey = "sort by"
         private const val SortDescKey = "desc"
 
-        fun newInstance(kinds: Set<FoodKind>, sortBy: NutritionParameter, desc: Boolean) = SortedFoodFragment().apply {
-            arguments = Bundle(2).apply {
-                putEnumSet(FoodKindsKey, kinds)
-                putSerializable(SortByParameterKey, sortBy)
-                putBoolean(SortDescKey, desc)
-            }
-        }
+        operator fun invoke(kinds: Set<FoodKind>, sortBy: NutritionParameter, desc: Boolean) =
+                SortedFoodFragment(Bundle(2).apply {
+                    putEnumSet(FoodKindsKey, kinds)
+                    putSerializable(SortByParameterKey, sortBy)
+                    putBoolean(SortDescKey, desc)
+                })
     }
 
 }

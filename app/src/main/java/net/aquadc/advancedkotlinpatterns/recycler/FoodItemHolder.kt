@@ -17,7 +17,7 @@ class FoodItemHolder(
 
     override fun bind(item: FoodItem) {
         picasso.load(item.photoUrl).fit().centerCrop().into(photoView)
-        titleView.text = item.title
+        titleView.text = item.name
         descriptionView.text = item.description
         nutritionInfoView.text = item.nutritionInfo.toString()
     }

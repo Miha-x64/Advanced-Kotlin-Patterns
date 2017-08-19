@@ -1,4 +1,4 @@
-package net.aquadc.advancedkotlinpatterns.feature.fragments.unsafe
+package net.aquadc.advancedkotlinpatterns.feature.fragments.safe
 
 import android.app.Fragment
 import android.os.Bundle
@@ -51,14 +51,7 @@ class FoodSortChooserFragment : Fragment() {
             button("Show") {
                 setOnClickListener {
 
-                    /*val fragment = SortedFoodFragment()
-                    fragment.arguments = Bundle(3).apply {
-                        putEnumSet(SortedFoodFragment.FoodKindsKey, foodChecks.filterValues { it.isChecked }.keys)
-                        putSerializable(SortedFoodFragment.SortByParameterKey, nutritionParameterSpinner.selectedItem as NutritionParameter)
-                        putBoolean(SortedFoodFragment.SortDescKey, descendingCheck.isChecked)
-                    }*/
-
-                    val fragment = SortedFoodFragment.newInstance(
+                    val fragment = SortedFoodFragment(
                             kinds = foodChecks.filterValues { it.isChecked }.keys,
                             sortBy = nutritionParameterSpinner.selectedItem as NutritionParameter,
                             desc = descendingCheck.isChecked)
