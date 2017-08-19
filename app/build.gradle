@@ -15,11 +15,19 @@ android {
     buildTypes {
         debug {
             minifyEnabled true
-            proguardFiles /*getDefaultProguardFile('proguard-android.txt'),*/ 'proguard-rules.pro'
+            shrinkResources true
+            proguardFiles 'proguard-rules.pro'
         }
         release {
             // unused, I don't want to specify a signingCongfig
         }
+    }
+    packagingOptions {
+        exclude 'META-INF/*kotlin*'
+        exclude 'META-INF/kotlin*'
+        exclude 'kotlin'
+        exclude 'kotlin/*'
+        exclude 'kotlin/**'
     }
 }
 
@@ -38,8 +46,6 @@ dependencies {
 
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
-
-    compile "com.chibatching.kotpref:kotpref:2.1.2"
 }
 repositories {
     maven {
