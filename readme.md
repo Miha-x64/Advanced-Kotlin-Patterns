@@ -18,7 +18,7 @@ Advanced Kotlin Patterns in Android /  Idiomatic Kotlin code in Android
 
 * Reactive data binding via broadcasts
   * [bind() implementation](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/bind/bind.kt)
-  * [ProfileFragment](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/bind/ProfileFragment.kt) — usage sample
+  * [ProfileFragment](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/bind/ProfileFragment.kt#L29) — usage sample
 
 * Safe fragments
   * [Unsafe fragment implementation](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/unsafe/FoodListFragment.kt), 
