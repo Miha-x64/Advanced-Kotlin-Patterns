@@ -30,7 +30,9 @@ class FoodListFragment : Fragment {
     private constructor(args: Bundle) { super.setArguments(args) }
 
     @Deprecated(message = "use factory instead", level = DeprecationLevel.ERROR)
-    override fun setArguments(args: Bundle?) {
+    override fun setArguments(args: Bundle) {
+        if (arguments != null)
+            throw IllegalStateException("arguments were already set to $arguments, was attempt to replace with $args")
         super.setArguments(args)
     }
 
