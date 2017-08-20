@@ -52,8 +52,12 @@ dependencies {
     compile("com.android.support:recyclerview-v7:${ext["support_version"]}")
 
     compile("org.jetbrains.kotlin:kotlin-stdlib-jre7:${ext["kotlin_version"]}")
-    compile("org.jetbrains.anko:anko-sdk25:${ext["anko_version"]}")
+    compile("org.jetbrains.anko:anko-sdk21:${ext["anko_version"]}")
+    compile("org.jetbrains.anko:anko-sdk21-coroutines:${ext["anko_version"]}")
     compile("org.jetbrains.anko:anko-recyclerview-v7:${ext["anko_version"]}")
+
+    compile("com.squareup.retrofit2:retrofit:2.3.0")
+    compile("ru.gildor.coroutines:kotlin-coroutines-retrofit:0.7.1")
 
     compile("com.squareup.picasso:picasso:2.5.2")
     compile("com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0")

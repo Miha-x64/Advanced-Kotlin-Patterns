@@ -10,6 +10,7 @@ import android.widget.FrameLayout
 import net.aquadc.advancedkotlinpatterns.common.replaceAndCommit
 import net.aquadc.advancedkotlinpatterns.feature.ankoRecyclerView.AnkoRecyclerViewFragment
 import net.aquadc.advancedkotlinpatterns.feature.bind.ProfileFragment
+import net.aquadc.advancedkotlinpatterns.feature.coroutines.CoroutinesFragment
 import net.aquadc.advancedkotlinpatterns.feature.crossinlineOneLiner.LoaderFragment
 import net.aquadc.advancedkotlinpatterns.feature.fragments.safe.FoodFilterAndSortChooserFragment
 import net.aquadc.advancedkotlinpatterns.feature.fragments.safe.FoodListFragment
@@ -28,7 +29,8 @@ class WelcomeFragment : Fragment() {
                     Item("Edit user (Reactive binding)", ::ProfileFragment),
                     Item("Food by popularity (safe fragment)", { FoodListFragment(FoodListFragment.Mode.Popular) }),
                     Item("Food filter (safe fragment)", ::FoodFilterAndSortChooserFragment),
-                    Item("A fragment with CachedAsyncTaskLoader, ClickableSpan, and AfterTextChangedListener (crossinline)", ::LoaderFragment)
+                    Item("A fragment with CachedAsyncTaskLoader, ClickableSpan, and AfterTextChangedListener (crossinline)", ::LoaderFragment),
+                    Item("Coroutines", ::CoroutinesFragment)
             ))
             adapter = itemAdapter
 
