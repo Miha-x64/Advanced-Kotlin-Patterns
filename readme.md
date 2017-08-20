@@ -1,4 +1,4 @@
-Advanced Kotlin Patterns in Android /  Idiomatic Kotlin code in Android
+Advanced Kotlin Patterns on Android /  Idiomatic Kotlin code on Android
 
 * A [fragment](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/ankoRecyclerView/AnkoRecyclerViewFragment.kt) with a RecyclerView in Anko
   * [ViewHolder](/app/src/main/java/net/aquadc/advancedkotlinpatterns/recycler/FoodItemHolder.kt)
