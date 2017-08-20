@@ -6,8 +6,8 @@ Advanced Kotlin Patterns on Android /  Idiomatic Kotlin code on Android
 
 * Crossinline one-liner anonymous classes
   * [parcelableCreator](/app/src/main/java/net/aquadc/advancedkotlinpatterns/common/parcelable.kt#L8) function, call-sites:
-    * [FoodListFragment.Mode.Popular](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodListFragment.kt#L65) (parcelable singleton)
-    * [FoodListFragment.Mode.FilterAndSort](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodListFragment.kt#L75)
+    * [FoodListFragment.Mode.Popular](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodListFragment.kt#L68) (parcelable singleton)
+    * [FoodListFragment.Mode.FilterAndSort](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodListFragment.kt#L78)
     * [User](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/bind/User.kt)
   * [CachedAsyncTaskLoader](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/CachedAsyncTaskLoader.kt),
   [call-site](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/crossinlineOneLiner/LoaderFragment.kt#L59)
@@ -28,7 +28,7 @@ Advanced Kotlin Patterns on Android /  Idiomatic Kotlin code on Android
   [call-site](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodFilterAndSortChooserFragment.kt#L54)
 
 * Coroutines
-  * [Sample use](/media/miha/WorkLin1/Презенташки/AdvancedKotlinPatterns/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/coroutines/CoroutinesFragment.kt#L50),
+  * [Sample use](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/coroutines/CoroutinesFragment.kt#L50),
   including `delay` and bindings to Retrofit.
 
 * TODO: sealed classes
