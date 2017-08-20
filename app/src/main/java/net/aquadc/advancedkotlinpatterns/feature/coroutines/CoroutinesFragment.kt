@@ -7,18 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.TextView
-import kotlinx.coroutines.experimental.Deferred
+import kotlinx.coroutines.experimental.*
 import org.jetbrains.anko.*
-import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.delay
 import ru.gildor.coroutines.retrofit.await
 import java.util.concurrent.TimeUnit.SECONDS as Seconds // you can import `MILLISECONDS as Seconds` for testing ;)
 
 class CoroutinesFragment : Fragment() {
 
     private lateinit var textView: TextView
-    private var teaser: Deferred<Unit>? = null
+    private var teaser: Job? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +35,7 @@ class CoroutinesFragment : Fragment() {
             textView = textView {
                 id = 1
                 freezesText = true
+                textSize = 20f
             }.lparams(width = matchParent) {
                 horizontalMargin = dip(8)
                 topMargin = dip(16)
@@ -48,7 +47,7 @@ class CoroutinesFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (teaser != null) return
-        teaser = async(UI) {
+        teaser = launch(UI) {
             textView.text = "Press the button."
             delay(3, Seconds)
             textView.text = "Hey. Press the button."
