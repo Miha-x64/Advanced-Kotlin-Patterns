@@ -8,6 +8,7 @@ import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import net.aquadc.advancedkotlinpatterns.app
 import net.aquadc.advancedkotlinpatterns.common.*
 import net.aquadc.advancedkotlinpatterns.common.recycler.ListAdapter
 import net.aquadc.advancedkotlinpatterns.feature.fragments.getFilteredAndSortedFoodItems
@@ -43,7 +44,7 @@ class FoodListFragment : Fragment {
         recyclerView {
             id = 1
             layoutManager = LinearLayoutManager(activity)
-            adapter = ListAdapter(mode.data) { createFoodItemHolder() }
+            adapter = ListAdapter(mode.data) { createFoodItemHolder(app.picasso) }
             addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
         }
 
