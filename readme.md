@@ -27,5 +27,9 @@ Advanced Kotlin Patterns in Android /  Idiomatic Kotlin code in Android
   with deprecated no-arg ctor, a ctor-like factory, and mode delegation;
   [call-site](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodFilterAndSortChooserFragment.kt#L54)
 
+* Coroutines
+  * [Sample use](/media/miha/WorkLin1/Презенташки/AdvancedKotlinPatterns/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/coroutines/CoroutinesFragment.kt#L50),
+  including `delay` and bindings to Retrofit.
+
 * TODO: sealed classes
 * TODO: kotlinx coroutines vs. Anko coroutines
