@@ -32,4 +32,3 @@ Advanced Kotlin Patterns on Android /  Idiomatic Kotlin code on Android
   including `delay` and bindings to Retrofit.
 
 * TODO: sealed classes
-* TODO: kotlinx coroutines vs. Anko coroutines
