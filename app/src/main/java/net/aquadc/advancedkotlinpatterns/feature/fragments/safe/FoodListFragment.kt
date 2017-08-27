@@ -13,6 +13,7 @@ import net.aquadc.advancedkotlinpatterns.common.*
 import net.aquadc.advancedkotlinpatterns.common.recycler.ListAdapter
 import net.aquadc.advancedkotlinpatterns.feature.fragments.getFilteredAndSortedFoodItems
 import net.aquadc.advancedkotlinpatterns.feature.fragments.getSortedByPopularityFoodItems
+import net.aquadc.advancedkotlinpatterns.feature.fragments.safe.FoodListFragment.Mode
 import net.aquadc.advancedkotlinpatterns.recycler.FoodItem
 import net.aquadc.advancedkotlinpatterns.recycler.FoodKind
 import net.aquadc.advancedkotlinpatterns.recycler.NutritionParameter
@@ -25,16 +26,20 @@ import org.jetbrains.anko.recyclerview.v7.recyclerView
  */
 class FoodListFragment : Fragment {
 
-    @Deprecated(message = "use factory instead", level = DeprecationLevel.ERROR)
+    @Deprecated(message = "use FoodListFragment(Mode) instead", level = DeprecationLevel.ERROR)
     constructor()
 
-    private constructor(args: Bundle) { super.setArguments(args) }
-
-    @Deprecated(message = "use factory instead", level = DeprecationLevel.ERROR)
+    @Deprecated(message = "use FoodListFragment(Mode) instead", level = DeprecationLevel.ERROR)
     override fun setArguments(args: Bundle) {
         if (arguments != null)
             throw IllegalStateException("arguments were already set to $arguments, was attempt to replace with $args")
         super.setArguments(args)
+    }
+
+    constructor(mode: Mode) {
+        super.setArguments(Bundle(1).apply {
+            putParcelable(ModeKey, mode)
+        })
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?) = UI {
@@ -50,13 +55,8 @@ class FoodListFragment : Fragment {
 
     }.view
 
-    companion object {
+    private companion object {
         private const val ModeKey = "mode"
-
-        operator fun invoke(mode: Mode) =
-                FoodListFragment(Bundle(1).apply {
-                    putParcelable(ModeKey, mode)
-                })
     }
 
     interface Mode : Parcelable {
