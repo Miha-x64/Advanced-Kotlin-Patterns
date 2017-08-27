@@ -1,4 +1,4 @@
-package net.aquadc.advancedkotlinpatterns.feature.sealed.kotlinStyle
+package net.aquadc.advancedkotlinpatterns.feature.sealed.kotlinReflectTypeStyle
 
 import java.lang.reflect.GenericDeclaration
 

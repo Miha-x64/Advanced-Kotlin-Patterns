@@ -1,4 +1,4 @@
-package net.aquadc.advancedkotlinpatterns.feature.sealed.kotlinStyle
+package net.aquadc.advancedkotlinpatterns.feature.sealed.kotlinReflectTypeStyle
 
 fun main(args: Array<String>) {
     val type = getTypeSomewhere()

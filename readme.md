@@ -32,5 +32,11 @@ Advanced Kotlin Patterns on Android /  Idiomatic Kotlin code on Android
   including `delay` and bindings to Retrofit.
 
 * Sealed classes
-  * [sealed class Attachment](app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/sealed/example/Attachment.kt)
-  * [AttachmentsFragment](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/sealed/example/AttachmentsFragment.kt)
+  * [Object-oriented solution](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/sealed/javaReflectTypeFantasy/Type.java)
+  (contrary to original java.lang.reflect.Type),
+  [call-site](/media/miha/WorkLin1/Презенташки/AdvancedKotlinPatterns/AdvancedKotlinPatterns/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/sealed/javaReflectTypeFantasy/TypeCallSite.java)
+  * [Functional-style solution](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/sealed/kotlinReflectTypeStyle/Type.kt),
+  [call-site](/media/miha/WorkLin1/Презенташки/AdvancedKotlinPatterns/AdvancedKotlinPatterns/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/sealed/kotlinReflectTypeStyle/CallSite.kt)
+  * Discriminated union: TODO
+  * [sealed class Attachment](app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/sealed/example/Attachment.kt),
+  [AttachmentsFragment](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/sealed/example/AttachmentsFragment.kt) use-site 

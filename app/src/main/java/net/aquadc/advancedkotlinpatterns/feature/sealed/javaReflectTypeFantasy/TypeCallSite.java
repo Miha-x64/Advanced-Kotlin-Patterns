@@ -1,4 +1,4 @@
-package net.aquadc.advancedkotlinpatterns.feature.sealed.javaLangReflectFantasy;
+package net.aquadc.advancedkotlinpatterns.feature.sealed.javaReflectTypeFantasy;
 
 import java.lang.reflect.GenericArrayType;
 import java.lang.reflect.ParameterizedType;
