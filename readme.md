@@ -1,8 +1,9 @@
 Advanced Kotlin Patterns on Android /  Idiomatic Kotlin code on Android
 
-* A [fragment](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/ankoRecyclerView/AnkoRecyclerViewFragment.kt) with a RecyclerView in Anko
-  * [ViewHolder](/app/src/main/java/net/aquadc/advancedkotlinpatterns/recycler/FoodItemHolder.kt)
-  * [item view](/app/src/main/java/net/aquadc/advancedkotlinpatterns/recycler/createFoodItemHolder.kt)
+* A [fragment made with Anko](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/ankoRecyclerView/AnkoRecyclerViewFragment.kt)
+  with a RecyclerView, its
+  [ViewHolder](/app/src/main/java/net/aquadc/advancedkotlinpatterns/recycler/FoodItemHolder.kt) and
+  [item view](/app/src/main/java/net/aquadc/advancedkotlinpatterns/recycler/createFoodItemHolder.kt)
 
 * Crossinline one-liner anonymous classes
   * [parcelableCreator](/app/src/main/java/net/aquadc/advancedkotlinpatterns/common/parcelable.kt#L8) function, call-sites:
@@ -28,7 +29,7 @@ Advanced Kotlin Patterns on Android /  Idiomatic Kotlin code on Android
   [call-site](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/fragments/safe/FoodFilterAndSortChooserFragment.kt#L54)
 
 * Coroutines
-  * [Sample use](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/coroutines/CoroutinesFragment.kt#L50),
+ [Sample use](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/coroutines/CoroutinesFragment.kt#L50),
   including `delay` and bindings to Retrofit.
 
 * Sealed classes
