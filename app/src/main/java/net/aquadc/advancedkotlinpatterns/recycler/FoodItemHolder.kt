@@ -22,4 +22,8 @@ class FoodItemHolder(
         nutritionInfoView.text = item.nutritionInfo.toString()
     }
 
+    override fun onRecycle() {
+        picasso.cancelRequest(photoView)
+    }
+
 }
