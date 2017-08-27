@@ -31,4 +31,6 @@ Advanced Kotlin Patterns on Android /  Idiomatic Kotlin code on Android
   * [Sample use](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/coroutines/CoroutinesFragment.kt#L50),
   including `delay` and bindings to Retrofit.
 
-* TODO: sealed classes
+* Sealed classes
+  * [sealed class Attachment](app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/sealed/example/Attachment.kt)
+  * [AttachmentsFragment](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/sealed/example/AttachmentsFragment.kt)

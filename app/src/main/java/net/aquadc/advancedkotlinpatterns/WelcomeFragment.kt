@@ -14,6 +14,7 @@ import net.aquadc.advancedkotlinpatterns.feature.coroutines.CoroutinesFragment
 import net.aquadc.advancedkotlinpatterns.feature.crossinlineOneLiner.LoaderFragment
 import net.aquadc.advancedkotlinpatterns.feature.fragments.safe.FoodFilterAndSortChooserFragment
 import net.aquadc.advancedkotlinpatterns.feature.fragments.safe.FoodListFragment
+import net.aquadc.advancedkotlinpatterns.feature.sealed.example.AttachmentsFragment
 import org.jetbrains.anko.UI
 import org.jetbrains.anko.listView
 import org.jetbrains.anko.matchParent
@@ -30,7 +31,8 @@ class WelcomeFragment : Fragment() {
                     Item("Food by popularity (safe fragment)", { FoodListFragment(FoodListFragment.Mode.Popular) }),
                     Item("Food filter (safe fragment)", ::FoodFilterAndSortChooserFragment),
                     Item("A fragment with CachedAsyncTaskLoader, ClickableSpan, and AfterTextChangedListener (crossinline)", ::LoaderFragment),
-                    Item("Coroutines", ::CoroutinesFragment)
+                    Item("Coroutines", ::CoroutinesFragment),
+                    Item("Sealed classes (Attachments adapter)", ::AttachmentsFragment)
             ))
             adapter = itemAdapter
 

@@ -49,12 +49,17 @@ dependencies {
 
     val ext = rootProject.extra
 
-    compile("com.android.support:recyclerview-v7:${ext["support_version"]}")
+    val supportVersion = ext["support_version"]
+    compile("com.android.support:recyclerview-v7:$supportVersion")
+    compile("com.android.support:cardview-v7:$supportVersion")
 
     compile("org.jetbrains.kotlin:kotlin-stdlib-jre7:${ext["kotlin_version"]}")
-    compile("org.jetbrains.anko:anko-sdk21:${ext["anko_version"]}")
-    compile("org.jetbrains.anko:anko-sdk21-coroutines:${ext["anko_version"]}")
-    compile("org.jetbrains.anko:anko-recyclerview-v7:${ext["anko_version"]}")
+
+    val ankoVersion = ext["anko_version"]
+    compile("org.jetbrains.anko:anko-sdk21:$ankoVersion")
+    compile("org.jetbrains.anko:anko-sdk21-coroutines:$ankoVersion")
+    compile("org.jetbrains.anko:anko-recyclerview-v7:$ankoVersion")
+    compile("org.jetbrains.anko:anko-cardview-v7:$ankoVersion")
 
     compile("com.squareup.retrofit2:retrofit:2.3.0")
     compile("ru.gildor.coroutines:kotlin-coroutines-retrofit:0.7.1")
