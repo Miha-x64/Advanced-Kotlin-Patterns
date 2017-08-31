@@ -50,7 +50,14 @@ dependencies {
     val ext = rootProject.extra
 
     val supportVersion = ext["support_version"]
-    compile("com.android.support:recyclerview-v7:$supportVersion")
+
+    // recycler without ProGuard rules
+    compile(group = "", name = "recyclerview-v7-$supportVersion-no-proguard", ext = "aar")
+    // recycler's dependencies
+    compile("com.android.support:support-annotations:$supportVersion")
+    compile("com.android.support:support-compat:$supportVersion")
+    compile("com.android.support:support-core-ui:$supportVersion")
+
     compile("com.android.support:cardview-v7:$supportVersion")
 
     compile("org.jetbrains.kotlin:kotlin-stdlib-jre7:${ext["kotlin_version"]}")
@@ -70,6 +77,7 @@ dependencies {
 
 repositories {
     maven { url = uri("http://dl.bintray.com/kotlin/kotlin-eap-1.2") }
+    flatDir { dirs("libs") }
 }
 
 fun Project.android(setup: AppExtension.() -> Unit) = the<AppExtension>().setup()

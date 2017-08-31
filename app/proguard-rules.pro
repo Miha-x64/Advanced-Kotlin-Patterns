@@ -9,15 +9,17 @@
 -renamesourcefileattribute "_"
 
 -assumenosideeffects class kotlin.jvm.internal.Intrinsics {
-  static void checkParameterIsNotNull(java.lang.Object, java.lang.String);
+  public static void checkExpressionValueIsNotNull(java.lang.Object, java.lang.String);
+  public static void checkFieldIsNotNull(java.lang.Object, java.lang.String);
+  public static void checkFieldIsNotNull(java.lang.Object, java.lang.String, java.lang.String);
+  public static void checkNotNull(java.lang.Object);
+  public static void checkNotNull(java.lang.Object, java.lang.String);
+  public static void checkNotNullExpressionValue(java.lang.Object, java.lang.String);
+  public static void checkNotNullParameter(java.lang.Object, java.lang.String);
+  public static void checkParameterIsNotNull(java.lang.Object, java.lang.String);
+  public static void checkReturnedValueIsNotNull(java.lang.Object, java.lang.String);
+  public static void checkReturnedValueIsNotNull(java.lang.Object, java.lang.String, java.lang.String);
 }
-
--keep public final class * extends android.app.Activity
--keep public final class * extends android.app.Application
--keep public final class * extends android.app.Service
--keep public final class * extends android.content.ContentProvider
--keep public final class * extends android.app.backup.BackupAgent
--keep public final class * extends android.preference.Preference
 
 -keepclassmembers class * implements android.os.Parcelable {
   public static final android.os.Parcelable$Creator CREATOR;
