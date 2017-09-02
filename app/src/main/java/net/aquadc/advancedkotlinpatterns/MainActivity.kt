@@ -20,5 +20,4 @@ class MainActivity : Activity() {
         const val FragmentContainerId = android.R.id.content
     }
 
-
 }
