@@ -12,7 +12,9 @@ import net.aquadc.advancedkotlinpatterns.common.putEnumSet
 import net.aquadc.advancedkotlinpatterns.common.recycler.ListAdapter
 import net.aquadc.advancedkotlinpatterns.feature.fragments.getFilteredAndSortedFoodItems
 import net.aquadc.advancedkotlinpatterns.feature.fragments.getSortedByPopularityFoodItems
-import net.aquadc.advancedkotlinpatterns.recycler.*
+import net.aquadc.advancedkotlinpatterns.recycler.FoodKind
+import net.aquadc.advancedkotlinpatterns.recycler.NutritionParameter
+import net.aquadc.advancedkotlinpatterns.recycler.createFoodItemHolder
 import org.jetbrains.anko.UI
 import org.jetbrains.anko.recyclerview.v7.recyclerView
 
@@ -119,7 +121,7 @@ class FoodListFragment : Fragment() {
 
         fun filterAndSort(kinds: Set<FoodKind>, sortBy: NutritionParameter, desc: Boolean) =
                 FoodListFragment().apply {
-                    arguments = Bundle(2).apply {
+                    arguments = Bundle(4).apply {
                         putInt(ModeKey, FilterAndSortMode)
                         putEnumSet(FoodKindsKey, kinds)
                         putSerializable(SortByParameterKey, sortBy)

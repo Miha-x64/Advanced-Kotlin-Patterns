@@ -28,7 +28,7 @@ class WelcomeFragment : Fragment() {
             val itemAdapter = ArrayAdapter(activity, android.R.layout.simple_list_item_1, listOf(
                     Item("Food list (RecyclerView with Anko)", ::AnkoRecyclerViewFragment),
                     Item("Edit user (Reactive binding)", ::ProfileFragment),
-                    Item("Food by popularity (safe fragment)", { FoodListFragment(FoodListFragment.Mode.Popular) }),
+                    Item("Food by popularity (safe fragment)", { FoodListFragment(FoodListFragment.DataSource.Popular) }),
                     Item("Food filter (safe fragment)", ::FoodFilterAndSortChooserFragment),
                     Item("A fragment with CachedAsyncTaskLoader, ClickableSpan, and AfterTextChangedListener (crossinline)", ::LoaderFragment),
                     Item("Coroutines", ::CoroutinesFragment),

@@ -52,7 +52,7 @@ class FoodFilterAndSortChooserFragment : Fragment() {
                 setOnClickListener {
 
                     val fragment = FoodListFragment(
-                            FoodListFragment.Mode.FilterAndSort(
+                            FoodListFragment.DataSource.FilterAndSort(
                                     kinds = foodChecks.filterValues { it.isChecked }.keys,
                                     sortBy = nutritionParameterSpinner.selectedItem as NutritionParameter,
                                     desc = descendingCheck.isChecked
