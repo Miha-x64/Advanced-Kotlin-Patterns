@@ -12,9 +12,11 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.TextView
+import net.aquadc.advancedkotlinpatterns.feature.sealed.unions.either.Either
+import net.aquadc.advancedkotlinpatterns.feature.sealed.unions.either.let
 import org.jetbrains.anko.*
 
-class LoaderFragment : Fragment(), LoaderManager.LoaderCallbacks<CharSequence> {
+class LoaderFragment : Fragment(), LoaderManager.LoaderCallbacks<Either<Throwable, CharSequence>> {
 
     private lateinit var loaderTextView: TextView
     private lateinit var watchedEditText: EditText
@@ -55,7 +57,7 @@ class LoaderFragment : Fragment(), LoaderManager.LoaderCallbacks<CharSequence> {
 
     }.view
 
-    override fun onCreateLoader(id: Int, args: Bundle?): Loader<CharSequence> = when (id) {
+    override fun onCreateLoader(id: Int, args: Bundle?): Loader<Either<Throwable, CharSequence>> = when (id) {
         0 -> CachedAsyncTaskLoader(activity) {
             Thread.sleep(3_000)
             SpannableStringBuilder("Content loaded! You may also ").apply {
@@ -73,10 +75,10 @@ class LoaderFragment : Fragment(), LoaderManager.LoaderCallbacks<CharSequence> {
         else -> throw IndexOutOfBoundsException()
     }
 
-    override fun onLoadFinished(loader: Loader<CharSequence>, data: CharSequence) {
-        loaderTextView.text = data
+    override fun onLoadFinished(loader: Loader<Either<Throwable, CharSequence>>, data: Either<Throwable, CharSequence>) {
+        loaderTextView.text = data.let({ it.message ?: it.toString() }, { it })
     }
 
-    override fun onLoaderReset(loader: Loader<CharSequence>) = Unit
+    override fun onLoaderReset(loader: Loader<Either<Throwable, CharSequence>>) = Unit
 
 }

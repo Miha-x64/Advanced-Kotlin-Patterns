@@ -18,6 +18,11 @@ class Right<out T : Any>(
     override fun toString(): String = "Right($value)"
 }
 
+inline fun <L : Any, R : Any, RR> Either<L, R>.let(transformLeft: (L) -> RR, transformRight: (R) -> RR) = when (this) {
+    is Left -> transformLeft(value)
+    is Right -> transformRight(value)
+}
+
 inline fun <L : Any, R : Any, TL : Any> Either<L, R>.mapLeft(transform: (L) -> TL) = when (this) {
     is Left -> Left(transform(value))
     is Right -> this
