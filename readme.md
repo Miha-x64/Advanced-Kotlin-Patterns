@@ -1,7 +1,10 @@
 Advanced Kotlin Patterns on Android /  Idiomatic Kotlin code on Android
 
+#### Presentations
 * [Safe fragments](https://speakerdeck.com/gdg_rnd/mikhail-goriunov-advanced-kotlin-patterns-on-android-safe-fragments) presentation
 * [Sealed classes](https://speakerdeck.com/gdg_rnd/mikhail-goriunov-advanced-kotlin-patterns-on-android-sealed-classes) presentation
+
+#### Code
 
 * A [fragment made with Anko](/app/src/main/java/net/aquadc/advancedkotlinpatterns/feature/ankoRecyclerView/AnkoRecyclerViewFragment.kt)
   with a RecyclerView, its
